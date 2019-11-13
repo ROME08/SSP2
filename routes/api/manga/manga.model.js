@@ -41,6 +41,19 @@ function mangasModel(db){
       )
   }
 
+  mangaModel.getManga = (manga, handler) =>{
+    var query = {"_id": new ObjectId(manga)};
+
+    mangaCollection.find(query).toArray(
+        (err, result) => {
+            if(err){
+                return handler(err, null);
+            }
+            return handler(null, result);
+        }
+    )
+}
+
   mangaModel.updateManga = (estado, manga, handler) =>{
     let mangaFilter = {"_id": new ObjectId(manga)};
     let updateObject = {
