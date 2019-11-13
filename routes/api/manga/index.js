@@ -49,6 +49,20 @@ function initMangaApi(db){
         })
     });
 
+    router.put('/update/:manga', (req, res) =>{
+        var manga = req.params.manga;
+        var estado = req.body.estado;
+
+        mangaModel.updateManga(estado, manga, (err, result)=>{
+            if(err){
+                res.status(400).json(err);
+            }else{
+                res.status(200).json(result);
+            }
+        })
+
+    })
+
     return router;
 }
 
