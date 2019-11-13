@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "f44a653f-6f08-4084-a5a3-b387ee465ab8",
+		"name": "SSP2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Security/Signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "romerocarlos0805@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "P@ssw0rd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/sec/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sec",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Security/Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "romerocarlos0805@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "pswd",
+							"value": "P@ssw0rd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/sec/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sec",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exa/All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/exa/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"exa",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exa/New",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGNiNTA5YmZlYzc3ZjE5YWM2NmNiNjMiLCJlbWFpbCI6InJvbWVyb2NhcmxvczA4MDVAZ21haWwuY29tIiwicm9sZXMiOlsicHVibGljIl0sImlhdCI6MTU3MzYwODY2MSwiZXhwIjoxNTczNjA5MjYxfQ.cQ0258GSD7eIWh3cwnaBIywX0raIHet62qAK1tZG3Eo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "manga",
+							"value": "002",
+							"type": "text"
+						},
+						{
+							"key": "Nombre",
+							"value": "Hungry Heart Wild Striker",
+							"type": "text"
+						},
+						{
+							"key": "Autor",
+							"value": "fulano",
+							"type": "text"
+						},
+						{
+							"key": "NumeroTomos",
+							"value": "17",
+							"type": "text"
+						},
+						{
+							"key": "PaisOrigen",
+							"value": "Japón",
+							"type": "text"
+						},
+						{
+							"key": "Estado",
+							"value": "Ongoging",
+							"type": "text"
+						},
+						{
+							"key": "KeyWords",
+							"value": "futbol, peleas, pelo de naranja",
+							"type": "text"
+						},
+						{
+							"key": "Categorias",
+							"value": "accion, shounnen, drama",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/exa/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"exa",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exa/Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "estado",
+							"value": "Completed",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/exa/update/:manga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"exa",
+						"update",
+						":manga"
+					],
+					"variable": [
+						{
+							"key": "manga",
+							"value": "5dcb5ce86029e01894ec9827"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exa/Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/exa/delete/:manga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"exa",
+						"delete",
+						":manga"
+					],
+					"variable": [
+						{
+							"key": "manga",
+							"value": "5dcb647eae41821bb0bab790"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exa/One",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/exa/one/:manga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"exa",
+						"one",
+						":manga"
+					],
+					"variable": [
+						{
+							"key": "manga",
+							"value": "5dcb647eae41821bb0bab790"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
