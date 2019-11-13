@@ -63,6 +63,17 @@ function initMangaApi(db){
 
     })
 
+    router.delete('/delete/:manga', (req, res) =>{
+        var manga = req.params.manga;
+
+        mangaModel.deleteManga(manga, (err, result)=>{
+            if(err){
+                return res.status(500).json(err);
+            }
+            return res.status(200).json(result);
+        })
+    });
+
     return router;
 }
 
